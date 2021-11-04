@@ -1,0 +1,243 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Panel_Style_Headbar.tres" type="StyleBox" id=1]
+[ext_resource path="res://Meta_Elements/Head_Bar.gd" type="Script" id=2]
+[ext_resource path="res://Meta_Elements/imgs/Head_Buttons_Background.png" type="Texture" id=3]
+[ext_resource path="res://Meta_Elements/imgs/Headbar_Buttons.png" type="Texture" id=4]
+[ext_resource path="res://Base_Systems/Base_Parts/Texture_Game_Button.gd" type="Script" id=5]
+[ext_resource path="res://Meta_Elements/imgs/Options_Button.png" type="Texture" id=6]
+[ext_resource path="res://Meta_Elements/imgs/Info_Button.png" type="Texture" id=7]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=12]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 75, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 150, 75, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 75, 75, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 150, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 75, 0, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 225, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 150, 225, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 75, 225, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 150, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 150, 150, 75, 75 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 75, 150, 75, 75 )
+
+[node name="Panel" type="Panel"]
+anchor_right = 1.0
+margin_bottom = 75.0
+theme = ExtResource( 12 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clock_Label" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 15.0
+margin_right = 172.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money_Label" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 15.0
+margin_right = 374.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0$"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Workforce_Label" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 15.0
+margin_right = 584.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Arbeiter:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info_Button" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -282.0
+margin_top = 15.0
+margin_right = -237.0
+margin_bottom = 60.0
+grow_horizontal = 0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options_Button" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -232.0
+margin_top = 15.0
+margin_right = -187.0
+margin_bottom = 60.0
+grow_horizontal = 0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen_Menue" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -182.0
+margin_right = 0.00012207
+margin_bottom = 170.0
+grow_horizontal = 0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Market_Button" type="TextureButton" parent="Screen_Menue"]
+margin_left = 15.0
+margin_top = 9.0
+margin_right = 91.0
+margin_bottom = 85.0
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shop_Button" type="TextureButton" parent="Screen_Menue"]
+margin_left = 15.0
+margin_top = 85.0
+margin_right = 91.0
+margin_bottom = 161.0
+texture_normal = SubResource( 10 )
+texture_pressed = SubResource( 11 )
+texture_hover = SubResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Balance_Button" type="TextureButton" parent="Screen_Menue"]
+margin_left = 91.0
+margin_top = 9.0
+margin_right = 167.0
+margin_bottom = 85.0
+texture_normal = SubResource( 13 )
+texture_pressed = SubResource( 14 )
+texture_hover = SubResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Storage_Button" type="TextureButton" parent="Screen_Menue"]
+margin_left = 91.0
+margin_top = 85.0
+margin_right = 167.0
+margin_bottom = 161.0
+texture_normal = SubResource( 16 )
+texture_pressed = SubResource( 17 )
+texture_hover = SubResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

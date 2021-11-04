@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Meta_Elements/imgs/search_icon.png" type="Texture" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Game_Button.gd" type="Script" id=2]
+[ext_resource path="res://Storage_Screen/Storage_Screen.gd" type="Script" id=3]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=4]
+
+[node name="Storage_Background" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Storage_Margin" type="MarginContainer" parent="."]
+margin_top = 180.0
+margin_right = 1205.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 1200, 720 )
+custom_constants/margin_right = 25
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Storage_VBox" type="VBoxContainer" parent="Storage_Margin"]
+margin_left = 20.0
+margin_right = 1180.0
+margin_bottom = 700.0
+
+[node name="Serch_HBox" type="HBoxContainer" parent="Storage_Margin/Storage_VBox"]
+margin_right = 1160.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Search_Input" type="LineEdit" parent="Storage_Margin/Storage_VBox/Serch_HBox"]
+visible = false
+margin_right = 300.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 50 )
+
+[node name="Search_Button" type="Button" parent="Storage_Margin/Storage_VBox/Serch_HBox"]
+visible = false
+margin_right = 65.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Category_Box" type="OptionButton" parent="Storage_Margin/Storage_VBox/Serch_HBox"]
+visible = false
+margin_right = 300.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 50 )
+
+[node name="Ware_Scroll" type="ScrollContainer" parent="Storage_Margin/Storage_VBox"]
+margin_top = 54.0
+margin_right = 1160.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 1160, 646 )
+
+[node name="Ware_List" type="VBoxContainer" parent="Storage_Margin/Storage_VBox/Ware_Scroll"]
+margin_right = 1145.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 1145, 640 )

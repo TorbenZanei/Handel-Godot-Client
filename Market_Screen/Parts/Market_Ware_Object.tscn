@@ -1,0 +1,207 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Base_Systems/Base_Parts/Game_Button.gd" type="Script" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Texture_Game_Button.gd" type="Script" id=2]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Arrow_Button.png" type="Texture" id=3]
+[ext_resource path="res://Market_Screen/Parts/Market_Ware_Object.gd" type="Script" id=4]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Panel_Style_Object.tres" type="StyleBox" id=5]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=6]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Font_Normal_15.tres" type="DynamicFont" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 45, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 90, 45, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 45, 45, 45, 45 )
+
+[node name="Background" type="Panel"]
+margin_right = 730.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 730, 265 )
+theme = ExtResource( 6 )
+custom_styles/panel = ExtResource( 5 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main_Margin" type="MarginContainer" parent="."]
+margin_right = 730.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 730, 265 )
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox_Split" type="HBoxContainer" parent="Main_Margin"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 715.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 596, 115 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_Left_Part" type="MarginContainer" parent="Main_Margin/HBox_Split"]
+margin_right = 205.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 205, 147 )
+custom_constants/margin_right = 5
+
+[node name="VBox_Left_part" type="VBoxContainer" parent="Main_Margin/HBox_Split/Margin_Left_Part"]
+margin_right = 200.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 200, 137 )
+
+[node name="Name" type="Label" parent="Main_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part"]
+margin_right = 200.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 200, 45 )
+align = 1
+
+[node name="Margin_Picture" type="MarginContainer" parent="Main_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part"]
+margin_top = 49.0
+margin_right = 200.0
+margin_bottom = 229.0
+rect_min_size = Vector2( 200, 170 )
+custom_constants/margin_right = 15
+custom_constants/margin_top = 5
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="Main_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part/Margin_Picture"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 185.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 170, 170 )
+
+[node name="Picture" type="TextureRect" parent="Main_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part/Margin_Picture/Panel"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 160.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 152, 152 )
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_Description" type="MarginContainer" parent="Main_Margin/HBox_Split"]
+margin_left = 209.0
+margin_right = 414.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 200, 147 )
+custom_constants/margin_right = 5
+
+[node name="Description" type="RichTextLabel" parent="Main_Margin/HBox_Split/Margin_Description"]
+margin_right = 200.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 200, 127 )
+custom_fonts/normal_font = ExtResource( 7 )
+text = "Ein kleiner test text um die größe des Fensters anzupassen"
+
+[node name="VBox_Input" type="VBoxContainer" parent="Main_Margin/HBox_Split"]
+margin_left = 418.0
+margin_right = 693.0
+margin_bottom = 235.0
+rect_min_size = Vector2( 270, 204 )
+
+[node name="Label_Price" type="Label" parent="Main_Margin/HBox_Split/VBox_Input"]
+margin_right = 275.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 275, 45 )
+text = "Preis:"
+
+[node name="Label_Storage" type="Label" parent="Main_Margin/HBox_Split/VBox_Input"]
+margin_top = 49.0
+margin_right = 275.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 275, 45 )
+text = "Freier Lagerplatz:"
+
+[node name="HBox_Amount" type="HBoxContainer" parent="Main_Margin/HBox_Split/VBox_Input"]
+margin_top = 98.0
+margin_right = 275.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 223, 30 )
+
+[node name="LineEdit_Amount" type="LineEdit" parent="Main_Margin/HBox_Split/VBox_Input/HBox_Amount"]
+margin_right = 177.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 177, 45 )
+text = "0"
+align = 2
+
+[node name="Amount_Up_Button" type="TextureButton" parent="Main_Margin/HBox_Split/VBox_Input/HBox_Amount"]
+margin_left = 181.0
+margin_right = 226.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
+texture_hover = SubResource( 4 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="Amount_Down_Button" type="TextureButton" parent="Main_Margin/HBox_Split/VBox_Input/HBox_Amount"]
+margin_left = 230.0
+margin_right = 275.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
+expand = true
+script = ExtResource( 2 )
+
+[node name="HBox_Final" type="HBoxContainer" parent="Main_Margin/HBox_Split/VBox_Input"]
+margin_top = 147.0
+margin_right = 275.0
+margin_bottom = 192.0
+
+[node name="Label_pack_value" type="Label" parent="Main_Margin/HBox_Split/VBox_Input/HBox_Final"]
+margin_right = 121.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 121, 45 )
+align = 2
+
+[node name="Accept_Button" type="Button" parent="Main_Margin/HBox_Split/VBox_Input/HBox_Final"]
+margin_left = 125.0
+margin_right = 275.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 150, 45 )
+text = "Kaufen"
+script = ExtResource( 1 )

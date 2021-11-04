@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Storage_Screen/Parts/Storage_Ware_Object.gd" type="Script" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Panel_Style_Object.tres" type="StyleBox" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+
+[node name="Background" type="Panel"]
+margin_right = 638.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 700, 250 )
+theme = ExtResource( 2 )
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_Margin" type="MarginContainer" parent="."]
+margin_right = 653.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 700, 250 )
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox_Split" type="HBoxContainer" parent="Background_Margin"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 685.0
+margin_bottom = 239.0
+rect_min_size = Vector2( 670, 220 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_Left_Part" type="MarginContainer" parent="Background_Margin/HBox_Split"]
+margin_right = 180.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 180, 218 )
+custom_constants/margin_right = 10
+
+[node name="VBox_Left_part" type="VBoxContainer" parent="Background_Margin/HBox_Split/Margin_Left_Part"]
+margin_right = 170.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 170, 137 )
+
+[node name="Name" type="Label" parent="Background_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part"]
+margin_right = 170.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 150, 45 )
+
+[node name="Picture_Border" type="Panel" parent="Background_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part"]
+margin_top = 49.0
+margin_right = 170.0
+margin_bottom = 219.0
+rect_min_size = Vector2( 170, 170 )
+
+[node name="Picture" type="TextureRect" parent="Background_Margin/HBox_Split/Margin_Left_Part/VBox_Left_part/Picture_Border"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 150, 150 )
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_Description" type="MarginContainer" parent="Background_Margin/HBox_Split"]
+margin_left = 184.0
+margin_right = 441.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 210, 218 )
+custom_constants/margin_right = 10
+
+[node name="Description" type="RichTextLabel" parent="Background_Margin/HBox_Split/Margin_Description"]
+margin_right = 247.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 247, 200 )
+
+[node name="Margin_Amount" type="MarginContainer" parent="Background_Margin/HBox_Split"]
+margin_left = 445.0
+margin_right = 670.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 225, 220 )
+custom_constants/margin_top = 16
+custom_constants/margin_bottom = 16
+
+[node name="VBox_Amount" type="VBoxContainer" parent="Background_Margin/HBox_Split/Margin_Amount"]
+margin_top = 16.0
+margin_right = 225.0
+margin_bottom = 208.0
+
+[node name="Label_Ware_Id" type="Label" parent="Background_Margin/HBox_Split/Margin_Amount/VBox_Amount"]
+margin_right = 225.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 80, 14 )
+text = "Waren Nummer:"
+
+[node name="Label_Ware_Category" type="Label" parent="Background_Margin/HBox_Split/Margin_Amount/VBox_Amount"]
+margin_top = 49.0
+margin_right = 225.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 80, 14 )
+text = "Waren Kategorie:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Ware_Price" type="Label" parent="Background_Margin/HBox_Split/Margin_Amount/VBox_Amount"]
+margin_top = 98.0
+margin_right = 225.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 80, 14 )
+text = "Marktpreis:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Storage_Amount" type="Label" parent="Background_Margin/HBox_Split/Margin_Amount/VBox_Amount"]
+margin_top = 147.0
+margin_right = 225.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 80, 14 )
+text = "Lagerbestand:"
+__meta__ = {
+"_edit_use_anchors_": false
+}

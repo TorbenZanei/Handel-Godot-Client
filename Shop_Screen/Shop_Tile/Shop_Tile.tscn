@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Shop_Screen/Shop_Tile/imgs/Timer_Background.png" type="Texture" id=1]
+[ext_resource path="res://Shop_Screen/Shop_Tile/Shop_Tile.gd" type="Script" id=2]
+[ext_resource path="res://Shop_Screen/Shop_Tile/Coin_Symbol.png" type="Texture" id=3]
+[ext_resource path="res://Shop_Screen/Shop_Tile/imgs/shop_tile_marking.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 75, 75 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 150, 150 )
+
+[node name="Tile_Textur" type="TextureButton"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tile_Construct" type="TextureRect" parent="."]
+visible = false
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tile_Highlight" type="TextureRect" parent="."]
+visible = false
+margin_right = 75.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 150, 150 )
+texture = SubResource( 1 )
+expand = true
+
+[node name="Tile_Effect" type="TextureRect" parent="."]
+visible = false
+margin_right = 75.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 150, 150 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Tile_Timer" type="Label" parent="."]
+visible = false
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 90.0
+custom_styles/normal = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

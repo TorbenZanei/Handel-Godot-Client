@@ -1,0 +1,636 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Arrow_Button.png" type="Texture" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Game_Button.gd" type="Script" id=2]
+[ext_resource path="res://Base_Systems/Base_Parts/Texture_Game_Button.gd" type="Script" id=3]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Panel_Style_Object.tres" type="StyleBox" id=5]
+[ext_resource path="res://Shop_Screen/Parts/Action_Window.gd" type="Script" id=6]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Close_Button.png" type="Texture" id=7]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Image_Border.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 170, 170 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 45, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 90, 45, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 45, 45, 45, 45 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[node name="Background_Panel" type="Panel"]
+visible = false
+margin_right = 810.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 810, 500 )
+theme = ExtResource( 4 )
+custom_styles/panel = ExtResource( 5 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production_Panel" type="Panel" parent="."]
+visible = false
+margin_right = 810.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 810, 500 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border_Margin" type="MarginContainer" parent="Production_Panel"]
+margin_right = 810.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 810, 500 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox_Split" type="HBoxContainer" parent="Production_Panel/Border_Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 790.0
+margin_bottom = 483.0
+rect_min_size = Vector2( 770, 460 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Margin" type="MarginContainer" parent="Production_Panel/Border_Margin/HBox_Split"]
+margin_right = 256.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="VBox_Split" type="VBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split/Ware_Margin"]
+margin_right = 250.0
+margin_bottom = 463.0
+
+[node name="Upgrade_Button" type="Button" parent="Production_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 250, 45 )
+disabled = true
+text = "Anlage Aufwerten"
+script = ExtResource( 2 )
+
+[node name="HSeparator" type="HSeparator" parent="Production_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 59.0
+
+[node name="Ware_Scroll" type="ScrollContainer" parent="Production_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_top = 63.0
+margin_right = 250.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 400 )
+scroll_horizontal_enabled = false
+
+[node name="Ware_VBox" type="VBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split/Ware_Scroll"]
+margin_right = 240.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 240, 400 )
+
+[node name="Description_Margin" type="MarginContainer" parent="Production_Panel/Border_Margin/HBox_Split"]
+margin_left = 260.0
+margin_right = 516.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="Description_VBox" type="VBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin"]
+margin_right = 250.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Ware_Name" type="Label" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 200, 45 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 231.0
+rect_min_size = Vector2( 250, 182 )
+custom_constants/margin_right = 40
+custom_constants/margin_top = 6
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 6
+
+[node name="Panel" type="Panel" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer"]
+margin_left = 40.0
+margin_top = 6.0
+margin_right = 210.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 170, 170 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Ware_Image" type="TextureRect" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 150, 150 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Description" type="RichTextLabel" parent="Production_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 235.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 200, 225 )
+
+[node name="Cost_VBox" type="VBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split"]
+margin_left = 520.0
+margin_right = 770.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Close_Button_Margin" type="MarginContainer" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+custom_constants/margin_left = 205
+
+[node name="Close_Button" type="TextureButton" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox/Close_Button_Margin"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+script = ExtResource( 3 )
+
+[node name="Cost_Scroll" type="ScrollContainer" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 313.0
+rect_min_size = Vector2( 200, 264 )
+scroll_horizontal_enabled = false
+
+[node name="Cost_VBox" type="VBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox/Cost_Scroll"]
+margin_right = 250.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 250, 200 )
+
+[node name="Time_Needet" type="Label" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox"]
+margin_top = 317.0
+margin_right = 250.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 200, 45 )
+text = "Zeit:"
+
+[node name="Amount_HBox" type="HBoxContainer" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox"]
+margin_top = 366.0
+margin_right = 250.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="Amount_Input" type="LineEdit" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox/Amount_HBox"]
+margin_right = 152.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 152, 45 )
+
+[node name="Up_Button" type="TextureButton" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox/Amount_HBox"]
+margin_left = 156.0
+margin_right = 201.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Down_Button" type="TextureButton" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox/Amount_HBox"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+script = ExtResource( 3 )
+
+[node name="Accept_Button" type="Button" parent="Production_Panel/Border_Margin/HBox_Split/Cost_VBox"]
+margin_top = 415.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 250, 45 )
+text = "Produzieren"
+script = ExtResource( 2 )
+
+[node name="Sell_Panel" type="Panel" parent="."]
+visible = false
+margin_right = 810.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 810, 500 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border_Margin" type="MarginContainer" parent="Sell_Panel"]
+margin_right = 810.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 810, 500 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox_Split" type="HBoxContainer" parent="Sell_Panel/Border_Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 790.0
+margin_bottom = 483.0
+rect_min_size = Vector2( 770, 460 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Margin" type="MarginContainer" parent="Sell_Panel/Border_Margin/HBox_Split"]
+margin_right = 256.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="VBox_Split" type="VBoxContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Ware_Margin"]
+margin_right = 250.0
+margin_bottom = 463.0
+
+[node name="Upgrade_Button" type="Button" parent="Sell_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 250, 45 )
+disabled = true
+text = "Anlage Aufwerten"
+script = ExtResource( 2 )
+
+[node name="HSeparator" type="HSeparator" parent="Sell_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 59.0
+
+[node name="Ware_Scroll" type="ScrollContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_top = 63.0
+margin_right = 250.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 400 )
+scroll_horizontal_enabled = false
+
+[node name="Ware_VBox" type="VBoxContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split/Ware_Scroll"]
+margin_right = 240.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 240, 400 )
+
+[node name="Description_Margin" type="MarginContainer" parent="Sell_Panel/Border_Margin/HBox_Split"]
+margin_left = 260.0
+margin_right = 516.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="Description_VBox" type="VBoxContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin"]
+margin_right = 250.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Ware_Name" type="Label" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 200, 45 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 231.0
+rect_min_size = Vector2( 250, 182 )
+custom_constants/margin_right = 40
+custom_constants/margin_top = 6
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 6
+
+[node name="Panel" type="Panel" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer"]
+margin_left = 40.0
+margin_top = 6.0
+margin_right = 210.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 170, 170 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Ware_Image" type="TextureRect" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 150, 150 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Description" type="RichTextLabel" parent="Sell_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 235.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 200, 225 )
+
+[node name="Sell_VBox" type="VBoxContainer" parent="Sell_Panel/Border_Margin/HBox_Split"]
+margin_left = 520.0
+margin_right = 770.0
+margin_bottom = 463.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Close_Button_Margin" type="MarginContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+custom_constants/margin_left = 205
+
+[node name="Close_Button" type="TextureButton" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox/Close_Button_Margin"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+script = ExtResource( 3 )
+
+[node name="Spacer" type="Panel" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 250, 313 )
+custom_styles/panel = SubResource( 12 )
+
+[node name="Amount_HBox" type="HBoxContainer" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox"]
+margin_top = 366.0
+margin_right = 250.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="Amount_Input" type="LineEdit" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox/Amount_HBox"]
+margin_right = 152.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 152, 45 )
+
+[node name="Up_Button" type="TextureButton" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox/Amount_HBox"]
+margin_left = 156.0
+margin_right = 201.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Down_Button" type="TextureButton" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox/Amount_HBox"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+script = ExtResource( 3 )
+
+[node name="Accept_Button" type="Button" parent="Sell_Panel/Border_Margin/HBox_Split/Sell_VBox"]
+margin_top = 415.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 250, 45 )
+text = "Verkaufen"
+script = ExtResource( 2 )
+
+[node name="Action_Overview_Panel" type="Panel" parent="."]
+visible = false
+margin_right = 810.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 810, 500 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border_Margin" type="MarginContainer" parent="Action_Overview_Panel"]
+margin_right = 810.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 810, 500 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox_Split" type="HBoxContainer" parent="Action_Overview_Panel/Border_Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 790.0
+margin_bottom = 483.0
+rect_min_size = Vector2( 770, 460 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Margin" type="MarginContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split"]
+margin_right = 256.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="VBox_Split" type="VBoxContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Ware_Margin"]
+margin_right = 250.0
+margin_bottom = 467.0
+
+[node name="Upgrade_Button" type="Button" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Ware_Margin/VBox_Split"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 250, 45 )
+disabled = true
+text = "Anlage Aufwerten"
+script = ExtResource( 2 )
+
+[node name="Description_Margin" type="MarginContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split"]
+margin_left = 260.0
+margin_right = 516.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 250, 460 )
+custom_constants/margin_right = 6
+
+[node name="Description_VBox" type="VBoxContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin"]
+margin_right = 250.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Ware_Name" type="Label" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 200, 45 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 231.0
+rect_min_size = Vector2( 250, 182 )
+custom_constants/margin_right = 40
+custom_constants/margin_top = 6
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 6
+
+[node name="Panel" type="Panel" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer"]
+margin_left = 40.0
+margin_top = 6.0
+margin_right = 210.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 170, 170 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Ware_Image" type="TextureRect" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox/MarginContainer/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 150, 150 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ware_Description" type="RichTextLabel" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Description_Margin/Description_VBox"]
+margin_top = 235.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 200, 225 )
+
+[node name="Action_VBox" type="VBoxContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split"]
+margin_left = 520.0
+margin_right = 770.0
+margin_bottom = 467.0
+rect_min_size = Vector2( 250, 460 )
+
+[node name="Close_Button_Margin" type="MarginContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox"]
+margin_right = 250.0
+margin_bottom = 45.0
+custom_constants/margin_left = 205
+
+[node name="Close_Button" type="TextureButton" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox/Close_Button_Margin"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+script = ExtResource( 3 )
+
+[node name="Spacer" type="Panel" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 313.0
+rect_min_size = Vector2( 250, 264 )
+custom_styles/panel = SubResource( 12 )
+
+[node name="Queue_Label" type="Label" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox"]
+margin_top = 317.0
+margin_right = 250.0
+margin_bottom = 362.0
+
+[node name="Amount_HBox" type="HBoxContainer" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox"]
+margin_top = 366.0
+margin_right = 250.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 200, 30 )
+
+[node name="Amount_Input" type="LineEdit" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox/Amount_HBox"]
+margin_right = 152.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 152, 45 )
+
+[node name="Up_Button" type="TextureButton" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox/Amount_HBox"]
+margin_left = 156.0
+margin_right = 201.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+expand = true
+script = ExtResource( 3 )
+
+[node name="Down_Button" type="TextureButton" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox/Amount_HBox"]
+margin_left = 205.0
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 45, 45 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+script = ExtResource( 3 )
+
+[node name="Accept_Button" type="Button" parent="Action_Overview_Panel/Border_Margin/HBox_Split/Action_VBox"]
+margin_top = 415.0
+margin_right = 250.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 250, 45 )
+text = "Update"
+script = ExtResource( 2 )

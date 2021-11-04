@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Shop_Screen/Parts/Object_Window.gd" type="Script" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Game_Button.gd" type="Script" id=2]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=3]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Panel_Style_Object.tres" type="StyleBox" id=4]
+[ext_resource path="res://Base_Systems/Base_Parts/Texture_Game_Button.gd" type="Script" id=5]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Close_Button.png" type="Texture" id=6]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Images/Image_Border.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 90, 0, 45, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 45, 0, 45, 45 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 170, 170 )
+margin_left = 10.0
+margin_right = 10.0
+margin_top = 10.0
+margin_bottom = 10.0
+
+[node name="Panel" type="Panel"]
+visible = false
+margin_right = 550.0
+margin_bottom = 450.0
+rect_min_size = Vector2( 550, 450 )
+theme = ExtResource( 3 )
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll_Box" type="ScrollContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 260.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 240, 410 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Object_List" type="VBoxContainer" parent="Scroll_Box"]
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 265.0
+margin_top = 20.0
+margin_right = 275.0
+margin_bottom = 430.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close_Button" type="TextureButton" parent="."]
+margin_left = 505.0
+margin_top = 20.0
+margin_right = 530.0
+margin_bottom = 45.0
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Object_Name" type="Label" parent="."]
+visible = false
+margin_left = 280.0
+margin_top = 55.0
+margin_right = 530.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 220, 50 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image_Border" type="Panel" parent="."]
+margin_left = 320.0
+margin_top = 20.0
+margin_right = 490.0
+margin_bottom = 190.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Object_Image" type="TextureRect" parent="Image_Border"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 160.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Object_Description" type="RichTextLabel" parent="."]
+margin_left = 280.0
+margin_top = 200.0
+margin_right = 530.0
+margin_bottom = 380.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accept_Button" type="Button" parent="."]
+margin_left = 330.0
+margin_top = 390.0
+margin_right = 480.0
+margin_bottom = 430.0
+text = "Bauen"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

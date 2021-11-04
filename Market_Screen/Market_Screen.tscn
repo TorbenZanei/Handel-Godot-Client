@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Market_Screen/Market_Screen.gd" type="Script" id=1]
+[ext_resource path="res://Base_Systems/Base_Parts/Game_Button.gd" type="Script" id=2]
+[ext_resource path="res://Base_Systems/Base_Parts/Theme/Game_Theme.tres" type="Theme" id=3]
+
+[node name="Market_Background" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1200, 900 )
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Market_UI" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 180.0
+margin_right = -20.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 1160, 700 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Category_Scroll" type="ScrollContainer" parent="Market_UI"]
+margin_right = 250.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 250, 0 )
+rect_clip_content = false
+
+[node name="Category_List" type="VBoxContainer" parent="Market_UI/Category_Scroll"]
+margin_right = 250.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 250, 0 )
+
+[node name="Category_Button_1" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+margin_right = 250.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 250, 45 )
+text = "Metall"
+script = ExtResource( 2 )
+
+[node name="Category_Button_2" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+margin_top = 49.0
+margin_right = 250.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 250, 45 )
+text = "Schmiede Teile"
+script = ExtResource( 2 )
+
+[node name="Category_Button_3" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+margin_top = 98.0
+margin_right = 250.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 250, 45 )
+text = "Schmiede Waren"
+script = ExtResource( 2 )
+
+[node name="Category_Button_4" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+visible = false
+margin_top = 102.0
+margin_right = 200.0
+margin_bottom = 132.0
+text = "Kräuter"
+script = ExtResource( 2 )
+
+[node name="Category_Button_5" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+visible = false
+margin_top = 136.0
+margin_right = 200.0
+margin_bottom = 166.0
+text = "Alchemie Teile"
+script = ExtResource( 2 )
+
+[node name="Category_Button_6" type="Button" parent="Market_UI/Category_Scroll/Category_List"]
+visible = false
+margin_top = 170.0
+margin_right = 200.0
+margin_bottom = 200.0
+text = "Alchemie Waren"
+script = ExtResource( 2 )
+
+[node name="Ware_Scroll" type="ScrollContainer" parent="Market_UI"]
+margin_left = 254.0
+margin_right = 986.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 732, 0 )
+
+[node name="Ware_List" type="VBoxContainer" parent="Market_UI/Ware_Scroll"]
+margin_right = 200.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="Action_Container" type="MarginContainer" parent="Market_UI"]
+margin_left = 990.0
+margin_right = 1160.0
+margin_bottom = 700.0
+grow_horizontal = 0
+rect_min_size = Vector2( 170, 0 )
+
+[node name="Action_Button_List" type="VBoxContainer" parent="Market_UI/Action_Container"]
+margin_right = 170.0
+margin_bottom = 700.0
+
+[node name="Buy_Button" type="Button" parent="Market_UI/Action_Container/Action_Button_List"]
+margin_right = 170.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 170, 45 )
+text = "Kaufen"
+script = ExtResource( 2 )
+
+[node name="Sell_Button" type="Button" parent="Market_UI/Action_Container/Action_Button_List"]
+margin_top = 49.0
+margin_right = 170.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 170, 45 )
+text = "Verkaufen"
+script = ExtResource( 2 )
